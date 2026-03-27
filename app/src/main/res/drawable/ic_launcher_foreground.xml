@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Radio waves icon centered -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,40L48,68L56,68L56,40Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,48L36,68L44,68L44,48Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,44L60,68L68,68L68,44Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M72,52L72,68L80,68L80,52Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,56L24,68L32,68L32,56Z" />
+</vector>

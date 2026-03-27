@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A2E14"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="48dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_logo"
+            android:contentDescription="Rede 3.16"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24H NO AMOR DE DEUS"
+            android:textColor="#66FFFFFF"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="36dp" />
+
+        <!-- Station Selector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOSSAS ESTAÇÕES"
+            android:textColor="#5534C759"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="14dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="36dp">
+
+            <ImageButton
+                android:id="@+id/btnBrasil"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_station"
+                android:src="@drawable/ic_globe"
+                android:padding="14dp"
+                android:scaleType="centerInside"
+                android:contentDescription="Brasil" />
+
+            <ImageButton
+                android:id="@+id/btnPlanalto"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_station"
+                android:src="@drawable/ic_globe"
+                android:padding="14dp"
+                android:alpha="0.4"
+                android:scaleType="centerInside"
+                android:contentDescription="Planalto Central" />
+
+            <ImageButton
+                android:id="@+id/btnBahia"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_station"
+                android:src="@drawable/ic_globe"
+                android:padding="14dp"
+                android:alpha="0.4"
+                android:scaleType="centerInside"
+                android:contentDescription="Bahia" />
+        </LinearLayout>
+
+        <!-- Station labels -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="-28dp"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="Brasil"
+                android:textColor="#AAFFFFFF"
+                android:textSize="11sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="Planalto"
+                android:textColor="#66FFFFFF"
+                android:textSize="11sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="Bahia"
+                android:textColor="#66FFFFFF"
+                android:textSize="11sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Player Card -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_player_card"
+            android:padding="24dp">
+
+            <!-- Station Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rede 3.16 — Brasil"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnPlay" />
+
+            <TextView
+                android:id="@+id/tvSub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nacional"
+                android:textColor="#66FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnPlay" />
+
+            <!-- Now Playing -->
+            <TextView
+                android:id="@+id/tvNow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Aperte o play para ouvir"
+                android:textColor="#AABFAE"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSub"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnPlay" />
+
+            <!-- Status row -->
+            <View
+                android:id="@+id/statusDot"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bg_dot_red"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvNow"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AO VIVO"
+                android:textColor="#FF3B30"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:visibility="gone"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvNow"
+                app:layout_constraintStart_toEndOf="@id/statusDot"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Play Button -->
+            <ImageButton
+                android:id="@+id/btnPlay"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_play_button"
+                android:src="@drawable/ic_play"
+                android:padding="20dp"
+                android:scaleType="centerInside"
+                android:contentDescription="Play/Pause"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Junta de Missões Nacionais — CBB"
+            android:textColor="#33FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="40dp" />
+
+    </LinearLayout>
+</ScrollView>

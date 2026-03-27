@@ -1,0 +1,3 @@
+-keep class androidx.media3.** { *; }
+-keep class br.com.rede316.app.** { *; }
+-dontwarn com.google.common.**
